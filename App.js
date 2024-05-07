@@ -11,7 +11,7 @@ export default function App() {
   async function buscar() {
     try {
       const resposta = await axios.get(`http://10.136.63.240:1234/drink.json`);
-      const drinks = resposta.data.drinks;
+      const drinks = resposta.data.drinks[0];
 
       if (drinks && Array.isArray(drinks)) {
         const drink = drinks.find(item => item.strDrink.toLowerCase() === nomeDoDrink.toLowerCase());
